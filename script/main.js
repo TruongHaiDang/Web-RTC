@@ -1,4 +1,4 @@
-const client = io("https://truonghaidang.github.io/Web-RTC/");
+const client = io("https://stream-video-rtc.herokuapp.com:40246");
 // const client = io('https://localhost');
 const arrUsers = [];
 
