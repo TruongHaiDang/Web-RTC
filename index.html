@@ -5,6 +5,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
         <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.js"></script>
         <link rel="stylesheet" href="./css/main.css">
         <script src="./script/main.js"></script>
     </head>
@@ -17,19 +18,26 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 videoContent">
                     <div id="nameLocalSection"></div>
                     <video id="localStream" controls></video>
                 </div>
-                <div id="nameRemoteSection"></div>
                 <div class="col-6 sectionCall">
                     <button type="button" class="btn btn-primary" id="btnCall">Call</button>
                     <input type="text" id="remoteId" class="form-control" placeholder="username">
+                    <button type="button" class="btn btn-primary" id="btnSignUp">signUp</button>
+                    <input type="text" id="userName" class="form-control" placeholder="username">
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 videoContent">
                     <video id="remoteStream" controls></video>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group" id="userInfo">
+                        <li class="list-group-item active">Users online</li>
+                        <!-- <li class="list-group-item"></li> -->
+                    </ul>
                 </div>
             </div>
         </div>

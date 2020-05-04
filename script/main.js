@@ -1,3 +1,24 @@
+const client = io('http://localhost:80');
+const arrUsers = [];
+
+client.on('signup_notifications', (data) => {
+    // for(i in data) {
+        $('#userName').val("");
+        $('#userInfo').append(`<li class="list-group-item" id="${data.id}" onclick="startStream('${data.id}')"> ${data.userName} </li>`)
+        flag = true
+    // }
+})
+
+client.on("Fail", () => alert("Đăng ký thất bại"))
+
+client.on('user_signout', (data) => {
+    alert(`${data} disconnected`)
+    $(`#${data}`).remove()
+    flag = false
+})
+
+client.on('load_video_section', () => $('.videoContent').show())
+
 function openStream() {
     const config = { audio: true, video: true };
     return navigator.mediaDevices.getUserMedia(config);
@@ -10,7 +31,13 @@ function playStream(idVideoTag, stream) {
 }
 
 var peer = new Peer();
-peer.on('open', id => $('#nameLocalSection').append(`<h3>My ID: ${id}</h3>`));
+peer.on('open', id => {
+    $('#nameLocalSection').append(`<h3>My ID: ${id}</h3>`);
+    $('#btnSignUp').click(() => {
+        var userName = $('#userName').val();
+        client.emit('user_signup', {userName: userName, id: id});       
+    })
+});
 
 $('document').ready(() => {
     $('#btnCall').click(() => {
@@ -24,6 +51,8 @@ $('document').ready(() => {
             console.log('Failed to get local stream' ,err);
         }
     })
+
+    $('.videoContent').hide()
 })
 
 peer.on('call', call => {
@@ -34,3 +63,12 @@ peer.on('call', call => {
         call.on('stream', remoteStream => playStream('remoteStream', remoteStream));
     })
 })
+
+function startStream(id){
+    openStream()
+    .then(stream => {
+        playStream('localStream', stream)
+        const call = peer.call(id, stream)
+        call.on('stream', remoteStream => playStream('remoteStream', remoteStream))
+    })
+}

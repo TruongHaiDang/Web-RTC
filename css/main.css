@@ -8,10 +8,14 @@
     margin-top: 2em;
 }
 
-.sectionCall {
+.sectionCall, .sectionUser {
     margin: 2em 0;
 }
 
-#remoteId {
+#remoteId, #userName {
+    margin-top: 2em;
+}
+
+#btnSignUp {
     margin-top: 2em;
 }
