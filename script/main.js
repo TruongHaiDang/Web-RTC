@@ -1,4 +1,4 @@
-const client = io.connect("https://stream-video-rtc.herokuapp.com:40246", {secure: true});
+// const client = io.connect("https://stream-video-rtc.herokuapp.com:40246", {secure: true});
 // const client = io('http://localhost:3000');
 const arrUsers = [];
 
