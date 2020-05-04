@@ -1,5 +1,5 @@
 // const client = io("https://truonghaidang.github.io/Web-RTC/");
-// const client = io('https://localhost');
+const client = io('https://localhost');
 const arrUsers = [];
 
 client.on('signup_notifications', (data) => {
