@@ -1,5 +1,5 @@
-const client = io(`https://git.heroku.com/stream-video-rtc.git`);
-// const client = io('http://localhost:443');
+// const client = io(`https://git.heroku.com/stream-video-rtc.git`);
+const client = io('http://localhost:443');
 const arrUsers = [];
 
 client.on('signup_notifications', (data) => {
