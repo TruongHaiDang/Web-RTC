@@ -31,7 +31,7 @@ function playStream(idVideoTag, stream) {
     video.play();
 }
 
-var peer = new Peer({key: 'peerjs', host: 'stream-video-rtc.herokuapp.com', secure: true, port: 443});
+var peer = new Peer({host:'stream-video-rtc.herokuapp.com', secure:true, port:443});
 // var peer = new Peer();
 peer.on('open', id => {
     $('#nameLocalSection').append(`<h3>My ID: ${id}</h3>`);
