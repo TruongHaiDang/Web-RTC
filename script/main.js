@@ -1,4 +1,4 @@
-const client = io(`https://git.heroku.com/stream-video-rtc.git:443`);
+const client = io(`https://git.heroku.com/stream-video-rtc.git:${process.env.PORT || 443}`);
 // const client = io('http://localhost:443');
 const arrUsers = [];
 
