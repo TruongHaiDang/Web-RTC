@@ -1,4 +1,4 @@
-const client = io(`https://truonghaidang.github.io/Web-RTC/`);
+// const client = io(`https://truonghaidang.github.io/Web-RTC/`);
 // const client = io('http://localhost:443');
 const arrUsers = [];
 
