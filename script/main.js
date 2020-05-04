@@ -1,4 +1,4 @@
-const client = io('http://git.heroku.com/stream-video-rtc.git');
+const client = io('https://git.heroku.com/stream-video-rtc.git');
 // const client = io('http://localhost:80');
 const arrUsers = [];
 
