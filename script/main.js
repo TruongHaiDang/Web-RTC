@@ -1,5 +1,5 @@
-const client = io("https://stream-video-rtc.herokuapp.com:40246");
-// const client = io('https://localhost');
+const client = io("https://stream-video-rtc.herokuapp.com:40246", {secure: true});
+// const client = io('http://localhost:3000');
 const arrUsers = [];
 
 client.on('signup_notifications', (data) => {
@@ -32,7 +32,7 @@ function playStream(idVideoTag, stream) {
 }
 
 var peer = new Peer({host:'stream-video-rtc.herokuapp.com', secure:true, port:443});
-// var peer = new Peer();
+var peer = new Peer();
 peer.on('open', id => {
     $('#nameLocalSection').append(`<h3>My ID: ${id}</h3>`);
     $('#btnSignUp').click(() => {
