@@ -1,4 +1,4 @@
-const client = io('https://git.heroku.com/stream-video-rtc.git');
+const client = io('https://git.heroku.com/stream-video-rtc.git:443');
 // const client = io('http://localhost:80');
 const arrUsers = [];
 
@@ -31,7 +31,7 @@ function playStream(idVideoTag, stream) {
     video.play();
 }
 
-var peer = new Peer({key: 'peerjs', host: 'https://stream-video-rtc.herokuapp.com', secure: true});
+var peer = new Peer({key: 'peerjs', host: 'https://stream-video-rtc.herokuapp.com', secure: true, port: 443});
 // var peer = new Peer();
 peer.on('open', id => {
     $('#nameLocalSection').append(`<h3>My ID: ${id}</h3>`);
