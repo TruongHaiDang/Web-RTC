@@ -1,4 +1,4 @@
-// const client = io("https://call-video-rtc.herokuapp.com:59492", {secure: true});
+const client = io("https://call-video-rtc.herokuapp.com:26026", {secure: true});
 // const client = io('http://localhost:6969');
 const arrUsers = [];
 
@@ -31,7 +31,7 @@ function playStream(idVideoTag, stream) {
     video.play();
 }
 
-var peer = new Peer({host:'call-video-rtc.herokuapp.com', secure:true, port:59492});
+var peer = new Peer({host:'call-video-rtc.herokuapp.com', secure:true, port:26026});
 // var peer = new Peer();
 peer.on('open', id => {
     $('#nameLocalSection').append(`<h3>My ID: ${id}</h3>`);
