@@ -1,5 +1,4 @@
-const client = io.connect("https://truonghaidang.github.io/Web-RTC:26026", {secure: true});
-// const client = io.connect("https://call-video-rtc.herokuapp.com:26026", {secure: true});
+const client = io.connect("https://call-video-rtc.herokuapp.com:26026", {secure: true});
 // const client = io('http://localhost:6969');
 const arrUsers = [];
 
