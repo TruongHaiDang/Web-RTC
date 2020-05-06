@@ -1,4 +1,4 @@
-const client = io.connect("https://call-video-rtc.herokuapp.com:11585", {secure: true});
+// const client = io.connect("https://call-video-rtc.herokuapp.com", {secure: true});
 // const client = io('http://localhost:6969');
 const arrUsers = [];
 
